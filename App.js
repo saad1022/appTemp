@@ -7,13 +7,18 @@ import Explore from "./src/Explore//ExploreHome";
 import VideoList from './src/List/VideoList';
 import jList from './src/List/javaList';
 import csharpList from './src/List/csharpList';
-import mList from './src/List/sqlist';
+import mList from './src/List/rn';
 import Vid from './src/Video/Video';
+import frstScreen from './src/Main/Main';
+import Logint from "./src/Teacher//Login";
+import Signupt from "./src/Teacher/Signup";
+import HomeT from "./src/Teacher//Home";
 
 
 
 
 //Navigator
+
 const MainNavigator = createStackNavigator(
     {
        
@@ -61,7 +66,52 @@ const MainNavigator = createStackNavigator(
     }
 );
 
+const TeachMainNavigator = createStackNavigator(
+    {
+       
+        //Path For Screens
+        Home: {
+            screen: HomeT,
+            headerMode: 'none',
+            navigationOptions:{
+               header: null     
+            }
+        },
+        List:{
+            screen: VideoList,
+            navigationOptions: {
+                headerTitle: <Text>List</Text>,
+                backgroundColor: '#34495e',
+                headerStyle: { 
+                    backgroundColor: '#3498db',               
+                    borderBottomColor: '#3498db',
+                    borderBottomWidth: 1,
+                  },
+                  headerTitleStyle: {
+                    fontSize: 24,
+                    fontWeight: 700
+                  },
+             
+            }
+        },
+        javaList: {
+            screen: jList
+        },
+        cList: {
+            screen: csharpList
+        },
+        rn: {
+            screen: mList
+        },
+        Video:{
+            screen: Vid
+        }
 
+    },
+    {
+       // initialRouteName: Explore
+    }
+);
 //Navigator
 const AuthNavigator = createStackNavigator(
     {
@@ -78,8 +128,42 @@ const AuthNavigator = createStackNavigator(
         }
     }
 );
+//Navigator
+const teachNavigator = createStackNavigator(
+    {
+        //Path For Screens
+        Logint: Logint,
+        Signupt: Signupt,
+        Home: TeachMainNavigator
+    },
+    {
+        //default options for navigator
+        headerMode: 'none',
+        defaultNavigationOptions: {
+           headerVisible: false
+        }
+    }
+);
 
-const AppContainer = createAppContainer(AuthNavigator);
+const startNav = createStackNavigator(
+    {
+        frst: frstScreen,
+        student: AuthNavigator,
+        teacher: teachNavigator
+        
+
+   },
+    {
+        //default options for navigator
+        headerMode: 'none',
+        defaultNavigationOptions: {
+           headerVisible: false
+        }
+    
+    }
+);
+
+const AppContainer = createAppContainer(startNav);
 
 
 export default class App extends React.Component {

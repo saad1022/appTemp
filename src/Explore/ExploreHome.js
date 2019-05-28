@@ -88,9 +88,10 @@ class Explore extends Component {
                                  
                             <View style={{ height:300,marginTop:15,marginBottom:10}}>
                                  <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-
+                                 
+                             <TouchableOpacity onPress = { () => this.props.navigation.navigate('javaList') }>
                                  <Container style={styles.course}>
-                                    <Content>
+                                      <Content>
                                             <Card style={{flex: 1}}>
                                                 <CardItem>
                                                 <Left>
@@ -120,13 +121,15 @@ class Explore extends Component {
                                                 </CardItem>
                                             </Card>
                                         </Content>
+                                      
                                     </Container>
+                                    </TouchableOpacity>
 
                                     {/* <Card logoUri={require('../img/javalogo.jpg')}
                                     head="Java" subhead="Tuitorials for Beginners"
                                     details="Java Fundamentals for Absolute Beginners" /> */}
-
-                                 <Container style={styles.course}>
+                                <TouchableOpacity onPress = { () => this.props.navigation.navigate('List') }>
+                                 <Container style={styles.course}>                                   
                                     <Content>
                                             <Card style={{flex: 1}}>
                                                 <CardItem>
@@ -157,7 +160,9 @@ class Explore extends Component {
                                                 </CardItem>
                                             </Card>
                                         </Content>
+
                                     </Container>
+                                    </TouchableOpacity>
                                    
                                    {/* <Card logoUri={require('../img/js.png')}
                                     head="JS" subhead="Learn JS in 1 Hour"
@@ -167,7 +172,7 @@ class Explore extends Component {
                                     <Card logoUri={require('../img/rn.png')}
                                     head="React Native" subhead="Intermediate to Advanced"
                                     details="React-Native Basics " /> */}
-
+                              <TouchableOpacity onPress = { () => this.props.navigation.navigate('rn') }>
                                 <Container style={styles.course}>
                                     <Content>
                                             <Card style={{flex: 1}}>
@@ -200,6 +205,8 @@ class Explore extends Component {
                                             </Card>
                                         </Content>
                                     </Container>
+                                    </TouchableOpacity>
+
 
                                  </ScrollView>
                             </View>     

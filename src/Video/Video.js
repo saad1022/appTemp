@@ -18,7 +18,7 @@ export default class VideoPlaye extends Component {
                 </View>
                 {/* / Video Player */}
 
-                {/* Video Title */}
+                {/* Video Title
                 <View style={styles.head}>
                     <Card>
                         <CardItem>
@@ -40,7 +40,7 @@ export default class VideoPlaye extends Component {
                 </View>
                 {/* / Video Title */}
 
-                {/* More Videos List */}
+                {/* More Videos List }
                
                     <ScrollView style={styles.list}>
                         <Content>
@@ -77,7 +77,7 @@ export default class VideoPlaye extends Component {
                                 />
                             </List>  
                         </Content>
-                    </ScrollView>   
+                    </ScrollView>    */}
                 
                {/* More Videos List */}
 
